@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
   background: #f4f6f8;
-  color: #173b2a;
+  color: yellow;
 }
 
 h1,
@@ -16,7 +16,7 @@ h4,
 p,
 label,
 span {
-  color: #173b2a;
+  color: black;
 }
 
 button,
@@ -382,6 +382,8 @@ input {
   font-weight: 700;
   outline: none;
   text-transform: uppercase;
+  background: white; 
+  color: #111827;
 }
 
 .symbol-input:focus {
