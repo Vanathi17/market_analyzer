@@ -1296,7 +1296,7 @@ input {
 }
 
 .fund-chevron {
-  color: #6d7786;
+  color: #c4cbd6;
   font-size: 18px;
 }
 
@@ -1344,7 +1344,7 @@ input {
 .money-input span,
 .percentage-input span {
   padding: 0 12px;
-  color: #7e8795;
+  color: #dbe0e9;
   font-size: 13px;
 }
 
@@ -1389,7 +1389,7 @@ input {
 
 .fund-subheading p {
   margin: 4px 0 0;
-  color: #8992a0;
+  color: #c1c8d4;
   font-size: 11px;
 }
 
