@@ -83,8 +83,12 @@ def create_database():
 # ============================================================
 
 @app.route("/api/health", methods=["GET"])
-def health():
+def api_health():
     return jsonify({"message": "Backend is working!"})
+
+@app.route("/health")
+def health():
+    return jsonify({"status": "ok"})
 
 
 # ============================================================

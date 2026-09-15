@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "https://market-analyzer-backend-i98w.onrender.com";
 
 function App() {
   const [page, setPage] = useState("login");
