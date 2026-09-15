@@ -1,6 +1,14 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f4f6f8;
+  color: #172033;
+}
+
 body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
@@ -21,7 +29,6 @@ span {
 button,
 input {
   font-family: inherit;
-  color: #111827;
 }
 
 
@@ -381,8 +388,6 @@ input {
   font-weight: 700;
   outline: none;
   text-transform: uppercase;
-  background: white;
-  color: #111827;
 }
 
 .symbol-input:focus {
@@ -541,7 +546,6 @@ input {
   background: transparent;
   padding: 0 12px;
   font-size: 14px;
-  color: #111827;
 }
 
 .input-prefix,
@@ -1159,7 +1163,6 @@ input {
   outline: none;
   background: #fafbfc;
   font-size: 14px;
-  color: #111827;
 }
 
 .portfolio-field input:focus,
@@ -1355,7 +1358,6 @@ input {
   background: transparent !important;
   height: 100%;
   padding: 0 10px !important;
-  color: #111827 !important;
 }
 
 .money-input input {
@@ -1453,8 +1455,6 @@ input {
   padding: 0 10px;
   outline: none;
   font-size: 13px;
-  background: white; 
-  color: #111827;
 }
 
 .allocation-row > input:focus {
