@@ -382,8 +382,6 @@ input {
   font-weight: 700;
   outline: none;
   text-transform: uppercase;
-  background: white;
-  color: white;
 }
 
 .symbol-input:focus {
