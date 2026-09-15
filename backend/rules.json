@@ -1,0 +1,218 @@
+{
+    "rulesVersion": "1.0",
+    "stockEvaluator": {
+        "priceEarningsRatio": {
+            "formula": "Share-price / Earnings-per-share",
+            "interpretation": "A low P/E (< 15) suggests the stock is cheap; a high P/E (> 30) indicates it may be expensive or over-valued.",
+            "rules": [
+                {
+                    "condition": "value < 15",
+                    "comment": "The P/E ratio of {value} suggests the stock is cheap relative to earnings."
+                },
+                {
+                    "condition": "15 <= value <= 30",
+                    "comment": "The P/E ratio of {value} is fairly typical."
+                },
+                {
+                    "condition": "value > 30",
+                    "comment": "The P/E ratio of {value} indicates the stock is relatively expensive compared to its earnings."
+                }
+            ]
+        },
+        "earningsPerShare": {
+            "formula": "(Net-income - Preferred-dividends) / Weighted-average-shares-outstanding",
+            "interpretation": "Higher EPS means greater profitability per share.",
+            "rules": [
+                {
+                    "condition": "value < 1",
+                    "comment": "The EPS of {value} is low; profitability may be a concern."
+                },
+                {
+                    "condition": "1 <= value < 5",
+                    "comment": "The EPS of {value} shows modest profitability."
+                },
+                {
+                    "condition": "value >= 5",
+                    "comment": "The EPS of {value} is a strong indicator of the company's profitability."
+                }
+            ]
+        },
+        "dividendYield": {
+            "formula": "(Annual-dividends-per-share / Share-price) * 100",
+            "interpretation": "Shows how much cash-flow an investor receives from dividends relative to the stock price.",
+            "rules": [
+                {
+                    "condition": "value < 1",
+                    "comment": "The dividend yield of {value}% is lower than the market average."
+                },
+                {
+                    "condition": "1 <= value <= 3",
+                    "comment": "The dividend yield of {value}% is around the market norm."
+                },
+                {
+                    "condition": "value > 3",
+                    "comment": "The dividend yield of {value}% is attractive for income-focused investors."
+                }
+            ]
+        },
+        "marketCap": {
+            "formula": "Share-price * Total-shares-outstanding",
+            "interpretation": "Measures the size of the company; e.g., $2.3 trillion is a very large (large-cap) firm.",
+            "constants": {
+                "trillion": 1000000000000
+            },
+            "rules": [
+                {
+                    "condition": "value >= 500 * trillion",
+                    "comment": "The market cap of ${value/trillion} trillion makes it one of the world's giants."
+                },
+                {
+                    "condition": "100 * trillion <= value < 500 * trillion",
+                    "comment": "The market cap of ${value/trillion} trillion indicates a very large, stable company."
+                },
+                {
+                    "condition": "value < 100 * trillion",
+                    "comment": "The market capitalization of ${value/trillion} trillion indicates a sizable player."
+                }
+            ]
+        },
+        "debtToEquityRatio": {
+            "formula": "Total-debt / Total-shareholder-equity",
+            "interpretation": "Indicates the degree of financial leverage. A moderate ratio (approximately 1) is typical; higher values imply more debt risk.",
+            "rules": [
+                {
+                    "condition": "value < 0.5",
+                    "comment": "The debt-to-equity ratio of {value} suggests very little leverage."
+                },
+                {
+                    "condition": "0.5 <= value <= 1.5",
+                    "comment": "The debt-to-equity ratio of {value} suggests a moderate level of leverage."
+                },
+                {
+                    "condition": "value > 1.5",
+                    "comment": "The debt-to-equity ratio of {value} indicates high leverage; watch for risk."
+                }
+            ]
+        },
+        "returnOnEquity": {
+            "formula": "(Net-income / Shareholder-equity) * 100",
+            "inputRepresentation": "decimal",
+            "displayTransformation": "value * 100",
+            "interpretation": "Shows how efficiently the company turns equity into profit. Higher percentages are better.",
+            "rules": [
+                {
+                    "condition": "value * 100 < 8",
+                    "comment": "The ROE of {pct}% is below average."
+                },
+                {
+                    "condition": "8 <= value * 100 <= 15",
+                    "comment": "The ROE of {pct}% is healthy."
+                },
+                {
+                    "condition": "value * 100 > 15",
+                    "comment": "The ROE of {pct}% is very strong, showing efficient profit generation."
+                }
+            ]
+        },
+        "returnOnAssets": {
+            "formula": "(Net-income / Total-assets) * 100",
+            "inputRepresentation": "decimal",
+            "displayTransformation": "value * 100",
+            "interpretation": "Measures profitability relative to all assets employed. Higher values indicate better asset utilisation.",
+            "rules": [
+                {
+                    "condition": "value * 100 < 5",
+                    "comment": "The ROA of {pct}% is modest."
+                },
+                {
+                    "condition": "5 <= value * 100 <= 10",
+                    "comment": "The ROA of {pct}% indicates efficient asset utilization."
+                },
+                {
+                    "condition": "value * 100 > 10",
+                    "comment": "The ROA of {pct}% is excellent, showing superb asset productivity."
+                }
+            ]
+        },
+        "currentRatio": {
+            "formula": "Current-assets / Current-liabilities",
+            "interpretation": "Assesses short-term liquidity. A ratio above 1 means the firm can cover its short-term obligations.",
+            "rules": [
+                {
+                    "condition": "value < 1",
+                    "comment": "The current ratio of {value} signals potential short-term liquidity issues."
+                },
+                {
+                    "condition": "1 <= value <= 2",
+                    "comment": "The current ratio of {value} suggests the company has a good short-term liquidity position."
+                },
+                {
+                    "condition": "value > 2",
+                    "comment": "The current ratio of {value} indicates a very comfortable liquidity cushion."
+                }
+            ]
+        },
+        "quickRatio": {
+            "formula": "(Current-assets - Inventory) / Current-liabilities",
+            "interpretation": "A stricter liquidity test; values >= 1 suggest the firm can meet immediate liabilities without relying on inventory.",
+            "rules": [
+                {
+                    "condition": "value < 1",
+                    "comment": "The quick ratio of {value} may be insufficient for immediate obligations."
+                },
+                {
+                    "condition": "1 <= value <= 2",
+                    "comment": "The quick ratio of {value} indicates a strong ability to meet short-term obligations."
+                },
+                {
+                    "condition": "value > 2",
+                    "comment": "The quick ratio of {value} shows an exceptionally strong liquidity position."
+                }
+            ]
+        },
+        "bookValuePerShare": {
+            "formula": "Total-shareholder-equity / Shares-outstanding",
+            "interpretation": "Represents the net asset value attributable to each share; useful as a floor valuation.",
+            "rules": [
+                {
+                    "condition": "always",
+                    "comment": "The book value per share of {value} is a measure of the company's net asset value on a per-share basis."
+                }
+            ]
+        }
+    },
+    "feedbackKeys": [
+        "priceEarningsRatio",
+        "earningsPerShare",
+        "dividendYield",
+        "marketCap",
+        "debtToEquityRatio",
+        "returnOnEquity",
+        "returnOnAssets",
+        "currentRatio",
+        "quickRatio",
+        "bookValuePerShare"
+    ],
+    "summary": {
+        "summaryParts": [
+            "priceEarningsRatio",
+            "earningsPerShare",
+            "returnOnEquity",
+            "returnOnAssets",
+            "currentRatio",
+            "quickRatio",
+            "debtToEquityRatio",
+            "dividendYield",
+            "marketCap"
+        ],
+        "separator": " "
+    },
+    "output": {
+        "fields": [
+            "stockSymbol",
+            "feedback",
+            "summary"
+        ],
+        "statusCode": 200
+    }
+}
