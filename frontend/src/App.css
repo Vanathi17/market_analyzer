@@ -316,13 +316,13 @@ input {
 }
 
 .stock-intro p:not(.eyebrow) {
-  color: #747d8c;
+  color: #173b2a;
   margin: 0;
   line-height: 1.6;
 }
 
 .analysis-badge {
-  background: white;
+  background: #173b2a;
   border: 1px solid #dfe4ea;
   border-radius: 8px;
   padding: 14px 18px;
@@ -338,7 +338,7 @@ input {
 }
 
 .analysis-badge small {
-  color: #8b939f;
+  color: #173b2a;
   margin-top: 4px;
 }
 
@@ -348,8 +348,8 @@ input {
 ========================================================= */
 
 .company-input-section {
-  background: white;
-  border: 1px solid #dfe4ea;
+  background: #173b2a;
+  border: 1px solid white;
   border-radius: 12px;
   padding: 25px 30px;
   display: flex;
@@ -368,7 +368,7 @@ input {
 .company-input-section p {
   margin: 0;
   font-size: 12px;
-  color: #7b8492;
+  color: #173b2a;
 }
 
 .symbol-input {
@@ -384,7 +384,7 @@ input {
 }
 
 .symbol-input:focus {
-  border-color: #172033;
+  border-color: #173b2a;
 }
 
 
@@ -417,7 +417,7 @@ input {
 }
 
 .metric-input-card {
-  background: white;
+  background: #173b2a;
   border: 1px solid #dfe4ea;
   border-radius: 10px;
   padding: 20px;
