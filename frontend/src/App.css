@@ -383,7 +383,7 @@ input {
   outline: none;
   text-transform: uppercase;
   background: white;
-  color: #111827;
+  color: white;
 }
 
 .symbol-input:focus {
