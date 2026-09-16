@@ -1,13 +1,20 @@
 import { useState } from "react";
 import "./App.css";
 
-const API_URL = "https://market-analyzer-backend-i98w.onrender.com";
+//const API_URL = "https://market-analyzer-backend-i98w.onrender.com";
+const API_URL = "http://127.0.0.1:5000";
 
 function App() {
-  const [page, setPage] = useState("login");
+  const [page, setPage] = useState(
+  localStorage.getItem("marketAnalyzerLoggedIn") === "true"
+    ? "home"
+    : "login"
+);
   const [isRegistering, setIsRegistering] = useState(false);
 
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(
+  localStorage.getItem("marketAnalyzerEmail") || ""
+);
   const [password, setPassword] = useState("");
 
   const [authMessage, setAuthMessage] = useState("");
@@ -158,6 +165,8 @@ function App() {
         return;
       }
 
+      localStorage.setItem("marketAnalyzerLoggedIn", "true");
+      localStorage.setItem("marketAnalyzerEmail", email);
 
       setPage("home");
 
@@ -1774,9 +1783,13 @@ if (page === "portfolio") {
 
         <button
           className="logout-button"
-          onClick={() =>
-            setPage("login")
-          }
+          onClick={() => {
+            localStorage.removeItem("marketAnalyzerLoggedIn");
+            localStorage.removeItem("marketAnalyzerEmail");
+            setPage("login");
+            setEmail("");
+            setPassword("");
+          }}
         >
           Logout
         </button>
