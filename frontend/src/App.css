@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
   background: #f4f6f8;
-  color: yellow;
+  color: yello;
 }
 
 h1,
@@ -16,13 +16,12 @@ h4,
 p,
 label,
 span {
-  color: black;
+  color: #173b2a;
 }
 
 button,
 input {
   font-family: inherit;
-  color: #111827;
 }
 
 
@@ -369,25 +368,23 @@ input {
 .company-input-section p {
   margin: 0;
   font-size: 12px;
-  color: #7b8492;
+  color: #ffffff;
 }
 
 .symbol-input {
   width: 310px;
   height: 49px;
-  border: 1px solid #ccd3dc;
+  border: 1px solid #7ca48d;
   border-radius: 8px;
   padding: 0 15px;
   font-size: 15px;
   font-weight: 700;
   outline: none;
   text-transform: uppercase;
-  background: white; 
-  color: #111827;
 }
 
 .symbol-input:focus {
-  border-color: #172033;
+  border-color: #eff1f5;
 }
 
 
@@ -1143,7 +1140,7 @@ input {
   display: block;
   font-size: 11px;
   font-weight: 800;
-  color: #687385;
+  color: #ffffff;
   margin-bottom: 8px;
   letter-spacing: 0.5px;
 }
@@ -1209,7 +1206,7 @@ input {
 
 .portfolio-section-heading > span {
   font-size: 12px;
-  color: #7d8795;
+  color: #e2e9f3;
 }
 
 
@@ -2053,4 +2050,82 @@ input {
     grid-template-columns: 100px 1fr 45px;
   }
 
+}
+/* =========================================================
+   READABILITY FIX
+   ========================================================= */
+
+/* Normal page text */
+body {
+  color: #173b2a;
+}
+
+/* Login / Register inputs */
+.auth-card input {
+  background: #ffffff !important;
+  color: #173b2a !important;
+  border: 1px solid #b8c8bf !important;
+}
+
+/* Placeholder text */
+.auth-card input::placeholder {
+  color: #68786f !important;
+  opacity: 1;
+}
+
+/* Holdings, sector, portfolio inputs */
+.portfolio-field input,
+.portfolio-field select,
+.portfolio-input-group input,
+.portfolio-input-group select {
+  background: #ffffff !important;
+  color: #173b2a !important;
+  border: 1px solid #b8c8bf !important;
+}
+
+/* Placeholder text for portfolio fields */
+.portfolio-field input::placeholder,
+.portfolio-input-group input::placeholder {
+  color: #9daca3 !important;
+  opacity: 1;
+}
+
+/* Currency dropdown and its options */
+.portfolio-field select option,
+.portfolio-input-group select option {
+  background: #ffffff !important;
+  color: #173b2a !important;
+}
+
+/* Select when focused */
+.portfolio-field select:focus,
+.portfolio-input-group select:focus {
+  background: #ffffff !important;
+  color: #173b2a !important;
+  border-color: #2f6b4f !important;
+}
+
+/* General inputs/selects */
+input,
+select,
+textarea {
+  color: #173b2a;
+}
+
+/* Make labels clearly visible */
+label {
+  color: #173b2a;
+}
+.allocation-row > input,
+.allocation-row .percentage-input input {
+  background: #ffffff !important;
+}
+.symbol-input {
+  background: #ffffff !important;
+  color: #173b2a !important;
+}
+
+.symbol-input::placeholder {
+  color: #68786f !important;
+  opacity: 1;
 }
